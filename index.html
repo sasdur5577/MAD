@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ই-বাজার | আমার অনলাইন শপ</title>
+    <title>ই-বাজার | আপনার বিশ্বস্ত অনলাইন শপ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="navbar">
-            <div class="logo"><a href="#">ই-বাজার</a></div>
+            <div class="logo"><a href="#home">ই-বাজার</a></div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#" class="active">হোম</a></li>
+                    <li><a href="#home" class="active">হোম</a></li>
                     <li><a href="#products">প্রোডাক্টস</a></li>
+                    <li><a href="#checkout">অর্ডার করুন</a></li>
                     <li><a href="#about">আমাদের সম্পর্কে</a></li>
-                    <li><a href="#contact">যোগাযোগ</a></li>
                 </ul>
             </nav>
             <div class="nav-icons">
-                <a href="#products" class="cart-badge">কার্ট (<span id="cart-count">0</span>)</a>
+                <a href="#checkout" class="cart-btn" onclick="openCartModal(event)">
+                    🛒 কার্ট (<span id="cart-count">0</span>)
+                </a>
             </div>
         </div>
     </header>
 
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="hero-content">
             <h1>সেরা পণ্যের সেরা অফার!</h1>
-            <p>আমাদের আকর্ষণীয় কালেকশন থেকে আজই আপনার পছন্দের পণ্যটি বেছে নিন।</p>
+            <p>সাশ্রয়ী মূল্যে মানসম্মত পণ্য কিনুন ঘরে বসেই। সারা বাংলাদেশে ক্যাশ অন ডেলিভারি সুবিধা।</p>
             <a href="#products" class="btn">এখনই কিনুন</a>
         </div>
     </section>
@@ -39,88 +41,290 @@
             
             <div class="product-card">
                 <div class="product-img">
-                    <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="220" fill="#e3f2fd"/>
-                        <rect x="115" y="65" width="70" height="90" rx="14" fill="#1e293b"/>
-                        <rect x="122" y="72" width="56" height="76" rx="8" fill="#38bdf8"/>
-                        <rect x="132" y="35" width="36" height="30" fill="#475569"/>
-                        <rect x="132" y="155" width="36" height="30" fill="#475569"/>
-                        <text x="150" y="114" font-size="14" font-family="sans-serif" fill="#ffffff" text-anchor="middle" font-weight="bold">10:30</text>
-                    </svg>
+                    <div class="img-placeholder">স্মার্ট ওয়াচ</div>
                 </div>
                 <div class="product-info">
-                    <h3>স্মার্ট ওয়াচ</h3>
+                    <h3>স্মার্ট ওয়াচ প্রো</h3>
+                    <p class="desc">ওয়াটারপ্রুফ ও ফিটনেস ট্র্যাকার সুবিধাযুক্ত</p>
                     <p class="price">৳ ২,৫০০</p>
-                    <button class="add-to-cart" onclick="addToCart()">কার্টে যোগ করুন</button>
+                    <button class="add-to-cart" onclick="addToCart('স্মার্ট ওয়াচ প্রো', 2500)">কার্টে যোগ করুন</button>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="product-img">
-                    <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="220" fill="#fce4ec"/>
-                        <path d="M100 120 A50 50 0 0 1 200 120" fill="none" stroke="#334155" stroke-width="12" stroke-linecap="round"/>
-                        <rect x="85" y="105" width="24" height="50" rx="10" fill="#e11d48"/>
-                        <rect x="191" y="105" width="24" height="50" rx="10" fill="#e11d48"/>
-                    </svg>
+                    <div class="img-placeholder">অয়্যারলেস হেডফোন</div>
                 </div>
                 <div class="product-info">
                     <h3>অয়্যারলেস হেডফোন</h3>
+                    <p class="desc">দীর্ঘস্থায়ী ব্যাটারি ও নয়েজ ক্যান্সেলেশন</p>
                     <p class="price">৳ ১,৮০০</p>
-                    <button class="add-to-cart" onclick="addToCart()">কার্টে যোগ করুন</button>
+                    <button class="add-to-cart" onclick="addToCart('অয়্যারলেস হেডফোন', 1800)">কার্টে যোগ করুন</button>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="product-img">
-                    <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="220" fill="#e8f5e9"/>
-                        <path d="M110 55 L130 45 L170 45 L190 55 L220 85 L195 105 L180 90 L180 175 L120 175 L120 90 L105 105 L80 85 Z" fill="#16a34a"/>
-                    </svg>
+                    <div class="img-placeholder">প্রিমিয়াম টি-শার্ট</div>
                 </div>
                 <div class="product-info">
-                    <h3>প্রিমিয়াম টি-শার্ট</h3>
+                    <h3>প্রিমিয়াম কটন টি-শার্ট</h3>
+                    <p class="desc">১০০% পিওর কটন ও আরামদায়ক ফ্যাব্রিক</p>
                     <p class="price">৳ ৬৫০</p>
-                    <button class="add-to-cart" onclick="addToCart()">কার্টে যোগ করুন</button>
+                    <button class="add-to-cart" onclick="addToCart('প্রিমিয়াম কটন টি-শার্ট', 650)">কার্টে যোগ করুন</button>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="product-img">
-                    <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="220" fill="#fff3e0"/>
-                        <rect x="105" y="55" width="90" height="120" rx="22" fill="#d97706"/>
-                        <rect x="120" y="105" width="60" height="55" rx="8" fill="#b45309"/>
-                        <path d="M135 55 A15 15 0 0 1 165 55" fill="none" stroke="#78350f" stroke-width="6"/>
-                    </svg>
+                    <div class="img-placeholder">ট্রাভেল ব্যাকপ্যাক</div>
                 </div>
                 <div class="product-info">
                     <h3>ট্রাভেল ব্যাকপ্যাক</h3>
+                    <p class="desc">ল্যাপটপ কম্পার্টমেন্ট ও ওয়াটার রেজিস্ট্যান্ট</p>
                     <p class="price">৳ ১,২০০</p>
-                    <button class="add-to-cart" onclick="addToCart()">কার্টে যোগ করুন</button>
+                    <button class="add-to-cart" onclick="addToCart('ট্রাভেল ব্যাকপ্যাক', 1200)">কার্টে যোগ করুন</button>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section id="about" class="about-section">
-        <h2 class="section-title">আমাদের সম্পর্কে</h2>
-        <p>ই-বাজার একটি বিশ্বস্ত অনলাইন শপিং প্ল্যাটফর্ম। আমরা সাশ্রয়ী মূল্যে সেরা মানের পণ্য সরাসরি আপনার দোরগোড়ায় পৌঁছে দিই।</p>
+    <section id="checkout" class="checkout-section">
+        <h2 class="section-title">কার্ট ও চেকআউট (অর্ডার ফর্ম)</h2>
+        <div class="checkout-wrapper">
+            
+            <div class="cart-summary">
+                <h3>আপনার নির্বাচিত পণ্য</h3>
+                <div id="cart-items-list" class="cart-items-list">
+                    <p class="empty-msg">আপনার কার্টে এখনো কোনো পণ্য নেই। ওপর থেকে পণ্য যোগ করুন।</p>
+                </div>
+                
+                <div class="price-breakdown">
+                    <div class="price-row">
+                        <span>পণ্যের মোট মূল্য:</span>
+                        <span id="subtotal-price">৳ ০</span>
+                    </div>
+                    <div class="price-row">
+                        <span>ডেলিভারি চার্জ:</span>
+                        <span id="delivery-charge">৳ ৬০</span>
+                    </div>
+                    <div class="price-row total-row">
+                        <span>সর্বমোট পরিশোধযোগ্য:</span>
+                        <span id="total-price">৳ ৬০</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-form-container">
+                <h3>ডেলিভারি তথ্য দিন</h3>
+                <form id="orderForm" onsubmit="submitOrder(event)">
+                    <div class="form-group">
+                        <label for="customerName">আপনার পূর্ণ নাম *</label>
+                        <input type="text" id="customerName" required placeholder="যেমন: মো. আরিফুল ইসলাম">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerPhone">মোবাইল নম্বর *</label>
+                        <input type="tel" id="customerPhone" required placeholder="যেমন: 017XXXXXXXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deliveryArea">ডেলিভারি এলাকা *</label>
+                        <select id="deliveryArea" onchange="updateTotals()">
+                            <option value="60">ঢাকার ভেতরে (ডেলিভারি চার্জ ৳ ৬০)</option>
+                            <option value="120">ঢাকার বাইরে সারা বাংলাদেশ (ডেলিভারি চার্জ ৳ ১২০)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerAddress">সম্পূর্ণ ঠিকানা *</label>
+                        <textarea id="customerAddress" rows="3" required placeholder="বাসা নং, রোড নং, এলাকা ও জেলার নাম লিখুন"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>পেমেন্ট মেথড *</label>
+                        <div class="payment-options">
+                            <label class="radio-label">
+                                <input type="radio" name="paymentMethod" value="ক্যাশ অন ডেলিভারি (COD)" checked onchange="toggleTrxField()">
+                                ক্যাশ অন ডেলিভারি (পণ্য হাতে পেয়ে টাকা দিন)
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="paymentMethod" value="বিকাশ / নগদ পেমেন্ট" onchange="toggleTrxField()">
+                                বিকাশ / নগদ (Send Money: 01700-000000)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="trxGroup" style="display: none;">
+                        <label for="trxId">বিকাশ / নগদ ট্রানজেকশন আইডি (TrxID) *</label>
+                        <input type="text" id="trxId" placeholder="যেমন: 8N7A6D5C4B">
+                    </div>
+
+                    <button type="submit" class="submit-order-btn">অর্ডার কনফার্ম করুন</button>
+                </form>
+            </div>
+
+        </div>
     </section>
 
-    <footer id="contact">
+    <div id="orderSuccessModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="success-icon">✅</div>
+            <h3>আপনার অর্ডারটি সফলভাবে গৃহীত হয়েছে!</h3>
+            <div id="orderReceipt" class="receipt-box"></div>
+            <button class="btn" onclick="closeModal()">ঠিক আছে</button>
+        </div>
+    </div>
+
+    <section id="about" class="about-section">
+        <h2>আমাদের সম্পর্কে</h2>
+        <p>ই-বাজার বাংলাদেশের একটি বিশ্বস্ত অনলাইন শপিং প্ল্যাটফর্ম। আমরা ক্রেতাদের হাতে সেরা মানের পণ্য দ্রুততম সময়ে পৌঁছে দিতে প্রতিশ্রুতিবদ্ধ।</p>
+    </section>
+
+    <footer>
         <div class="footer-content">
-            <p>যোগাযোগ: support@ebazar.example | ফোন: ০১৭০০-০০০০০০</p>
             <p>&copy; ২০২৬ ই-বাজার। সর্বস্বত্ব সংরক্ষিত।</p>
+            <p>হেল্পলাইন: ০১৭০০-০০০০০০ | ইমেইল: support@ebazar-bd.com</p>
         </div>
     </footer>
 
     <script>
-        let count = 0;
-        function addToCart() {
-            count++;
-            document.getElementById('cart-count').innerText = count;
+        let cart = [];
+
+        function toBanglaNumber(num) {
+            const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            return num.toString().replace(/\d/g, d => banglaDigits[d]);
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name: name, price: price, qty: 1 });
+            }
+            updateCartUI();
+            
+            const checkoutSection = document.getElementById('checkout');
+            alert(name + ' কার্টে যোগ করা হয়েছে! নিচে চেকআউট ফর্ম থেকে অর্ডার সম্পন্ন করুন।');
+        }
+
+        function changeQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const listContainer = document.getElementById('cart-items-list');
+            const countSpan = document.getElementById('cart-count');
+            
+            let totalQty = 0;
+            cart.forEach(item => totalQty += item.qty);
+            countSpan.innerText = toBanglaNumber(totalQty);
+
+            if (cart.length === 0) {
+                listContainer.innerHTML = '<p class="empty-msg">আপনার কার্টে এখনো কোনো পণ্য নেই। ওপর থেকে পণ্য যোগ করুন।</p>';
+            } else {
+                let html = '';
+                cart.forEach((item, index) => {
+                    html += `
+                        <div class="cart-item">
+                            <div class="item-details">
+                                <strong>${item.name}</strong>
+                                <span>৳ ${toBanglaNumber(item.price)} x ${toBanglaNumber(item.qty)}</span>
+                            </div>
+                            <div class="item-actions">
+                                <button type="button" onclick="changeQty(${index}, -1)">-</button>
+                                <span>${toBanglaNumber(item.qty)}</span>
+                                <button type="button" onclick="changeQty(${index}, 1)">+</button>
+                                <button type="button" class="del-btn" onclick="removeItem(${index})">🗑️</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                listContainer.innerHTML = html;
+            }
+            updateTotals();
+        }
+
+        function updateTotals() {
+            let subtotal = 0;
+            cart.forEach(item => {
+                subtotal += item.price * item.qty;
+            });
+
+            const deliveryCharge = parseInt(document.getElementById('deliveryArea').value);
+            const total = subtotal + deliveryCharge;
+
+            document.getElementById('subtotal-price').innerText = '৳ ' + toBanglaNumber(subtotal);
+            document.getElementById('delivery-charge').innerText = '৳ ' + toBanglaNumber(deliveryCharge);
+            document.getElementById('total-price').innerText = '৳ ' + toBanglaNumber(total);
+        }
+
+        function toggleTrxField() {
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            const trxGroup = document.getElementById('trxGroup');
+            const trxInput = document.getElementById('trxId');
+            
+            if (paymentMethod.includes('বিকাশ')) {
+                trxGroup.style.display = 'block';
+                trxInput.required = true;
+            } else {
+                trxGroup.style.display = 'none';
+                trxInput.required = false;
+            }
+        }
+
+        function submitOrder(event) {
+            event.preventDefault();
+
+            if (cart.length === 0) {
+                alert('দুঃখিত! আপনার কার্টে কোনো পণ্য নেই। অনুগ্রহ করে আগে পণ্য নির্বাচন করুন।');
+                document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const address = document.getElementById('customerAddress').value;
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            const trxId = document.getElementById('trxId').value;
+            const totalText = document.getElementById('total-price').innerText;
+
+            let itemsSummary = cart.map(i => `${i.name} (${toBanglaNumber(i.qty)} টি)`).join(', ');
+            let orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+
+            let receiptHTML = `
+                <p><strong>অর্ডার আইডি:</strong> ${orderId}</p>
+                <p><strong>ক্রেতার নাম:</strong> ${name}</p>
+                <p><strong>মোবাইল:</strong> ${phone}</p>
+                <p><strong>ঠিকানা:</strong> ${address}</p>
+                <p><strong>পণ্যসমূহ:</strong> ${itemsSummary}</p>
+                <p><strong>পেমেন্ট:</strong> ${paymentMethod} ${trxId ? '(TrxID: ' + trxId + ')' : ''}</p>
+                <p><strong>সর্বমোট বিল:</strong> ${totalText}</p>
+            `;
+
+            document.getElementById('orderReceipt').innerHTML = receiptHTML;
+            document.getElementById('orderSuccessModal').style.display = 'flex';
+
+            cart = [];
+            updateCartUI();
+            document.getElementById('orderForm').reset();
+            toggleTrxField();
+        }
+
+        function closeModal() {
+            document.getElementById('orderSuccessModal').style.display = 'none';
         }
     </script>
 
