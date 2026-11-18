@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ই-বাজার | আমার অনলাইন শপ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#">ই-বাজার</a></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">হোম</a></li>
+                    <li><a href="#products">প্রোডাক্টস</a></li>
+                    <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                    <li><a href="#contact">যোগাযোগ</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="#products" class="cart-badge">কার্ট (<span id="cart-count">0</span>)</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>সেরা পণ্যের সেরা অফার!</h1>
+            <p>আমাদের আকর্ষণীয় কালেকশন থেকে আজই আপনার পছন্দের পণ্যটি বেছে নিন।</p>
+            <a href="#products" class="btn">এখনই কিনুন</a>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <h2 class="section-title">আমাদের প্রোডাক্ট সমূহ</h2>
+        <div class="product-container">
+            
+            <div class="product-card">
+                <div class="product-img">
+                    <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="300" height="220" fill="#e3f2fd"/>
+                        <rect x="115" y="65" width="70" height="90" rx="14" fill="#1e293b"/>
+                        <rect x="122" y="72" width="56" height="76" rx="8" fill="#38bdf8"/>
+                        <rect x="132" y="35" width="36" height="30" fill="#475569"/>
+                        <rect x="132" y="155" width="36" height="30" fill="#475569"/>
+                        <text x="150" y="114" font-size="14" font-family="sans-serif" fill="#ffffff" text-anchor="middle" font-weight="bold">10:30</text>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3>স্মার্ট ওয়াচ</h3>
+                    <p class="price">৳ ২,৫০০</p>
+                    <button class="add-to-cart" onclick="addToCart()">কার্টে যোগ করুন</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="300" height="220" fill="#fce4ec"/>
+                        <path d="M100 120 A50 50 0 0 1 200 120" fill="none" stroke="#334155" stroke-width="12" stroke-linecap="round"/>
+                        <rect x="85" y="105" width="24" height="50" rx="10" fill="#e11d48"/>
+                        <rect x="191" y="105" width="24" height="50" rx="10" fill="#e11d48"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3>অয়্যারলেস হেডফোন</h3>
+                    <p class="price">৳ ১,৮০০</p>
+                    <button class="add-to-cart" onclick="addToCart()">কার্টে যোগ করুন</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="300" height="220" fill="#e8f5e9"/>
+                        <path d="M110 55 L130 45 L170 45 L190 55 L220 85 L195 105 L180 90 L180 175 L120 175 L120 90 L105 105 L80 85 Z" fill="#16a34a"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3>প্রিমিয়াম টি-শার্ট</h3>
+                    <p class="price">৳ ৬৫০</p>
+                    <button class="add-to-cart" onclick="addToCart()">কার্টে যোগ করুন</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="300" height="220" fill="#fff3e0"/>
+                        <rect x="105" y="55" width="90" height="120" rx="22" fill="#d97706"/>
+                        <rect x="120" y="105" width="60" height="55" rx="8" fill="#b45309"/>
+                        <path d="M135 55 A15 15 0 0 1 165 55" fill="none" stroke="#78350f" stroke-width="6"/>
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <h3>ট্রাভেল ব্যাকপ্যাক</h3>
+                    <p class="price">৳ ১,২০০</p>
+                    <button class="add-to-cart" onclick="addToCart()">কার্টে যোগ করুন</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2 class="section-title">আমাদের সম্পর্কে</h2>
+        <p>ই-বাজার একটি বিশ্বস্ত অনলাইন শপিং প্ল্যাটফর্ম। আমরা সাশ্রয়ী মূল্যে সেরা মানের পণ্য সরাসরি আপনার দোরগোড়ায় পৌঁছে দিই।</p>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <p>যোগাযোগ: support@ebazar.example | ফোন: ০১৭০০-০০০০০০</p>
+            <p>&copy; ২০২৬ ই-বাজার। সর্বস্বত্ব সংরক্ষিত।</p>
+        </div>
+    </footer>
+
+    <script>
+        let count = 0;
+        function addToCart() {
+            count++;
+            document.getElementById('cart-count').innerText = count;
+        }
+    </script>
+
+</body>
+</html>
